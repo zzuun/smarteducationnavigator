@@ -10,16 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".HomeActivity.HomeActivity">
+        <activity android:name=".HomeActivity.HomeActivity" />
+        <activity android:name=".SearchActivity.SearchActivity" />
+        <activity
+            android:name=".NavigationActivity.NavigationActivity"
+            android:label="@string/title_activity_navigation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity.SearchActivity">
-
-        </activity>
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".SearchActivity.SearchListActivity"></activity>
     </application>
 
 </manifest>

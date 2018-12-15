@@ -7,27 +7,123 @@
     android:layout_height="match_parent"
     tools:context=".SearchActivity.SearchActivity">
 
-    <LinearLayout
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_arrow_back_black_24dp"/>
-        <EditText
-            android:id="@+id/editSearch"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:transitionName="searchbar"
-            android:background="@drawable/search_bar_style"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <android.support.v7.widget.SearchView
+                android:layout_marginTop="20dp"
+                android:id="@+id/searchbarSearchScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:closeIcon="@drawable/ic_clear_black_24dp"
+                app:iconifiedByDefault="false"
+                android:transitionName="searchView"
+                app:queryHint="Search"
+                app:searchIcon="@null"
+                app:queryBackground="@color/colorWhite"
+                />
+            <View
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGrey" />
+
+            <RelativeLayout
+                android:id="@+id/searchmainlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <LinearLayout
+                    android:id="@+id/searchnearbyinstitutes"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_location_searching_black_24dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Search Nearby Institutes"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/searchScreenrecentlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/searchnearbyinstitutes"
+                    >
+                    <TextView
+                        android:id="@+id/recentSearchTextActivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recent Search"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorBlack"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        />
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recentSearchListActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/recentSearchTextActivity">
+
+                    </android.support.v7.widget.RecyclerView>
 
 
-    </LinearLayout>
+                    <TextView
+                        android:id="@+id/clearRecentSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Clear Search History"
+                        android:textSize="20sp"
+                        android:textColor="#f70202"
+                        android:textAllCaps="true"
+                        android:layout_below="@id/recentSearchListActivity"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/searchrecyclerViewLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/searchrecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        >
+                    </android.support.v7.widget.RecyclerView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
 
 </RelativeLayout>
