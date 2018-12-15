@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.SearchFragmeent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/searchBarText"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:transitionName="searchView"
+                android:textSize="18sp"
+                android:textColor="#aaaaaa"
+                android:text="Search"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGrey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp">
+                <RelativeLayout
+                    android:id="@+id/mainLayoutSearchFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/recentLayoutFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/recentSearchTextFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recent Searches"
+                            android:textSize="20sp"
+                            android:textColor="@color/colorBlack"
+                            android:textAllCaps="true"
+                            android:textStyle="bold"
+                            />
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recentSearchListFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:layout_below="@id/recentSearchTextFragment">
+
+                        </android.support.v7.widget.RecyclerView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/mostlyLayoutFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_below="@id/recentLayoutFragment">
+                        <TextView
+                            android:id="@+id/mostlySearchTextFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Most Viewd"
+                            android:textSize="20sp"
+                            android:textColor="@color/colorBlack"
+                            android:textAllCaps="true"
+                            android:textStyle="bold"
+                            />
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/mostlySearchListFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:layout_below="@id/mostlySearchTextFragment">
+
+                        </android.support.v7.widget.RecyclerView>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+    
+</FrameLayout>
